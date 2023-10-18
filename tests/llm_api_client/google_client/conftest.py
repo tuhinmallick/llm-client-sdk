@@ -23,7 +23,7 @@ def llm_client(config):
 
 @pytest.fixture
 def params(llm_client):
-    return "?" + AUTH_PARAM + "=" + llm_client._api_key
+    return f"?{AUTH_PARAM}={llm_client._api_key}"
 
 
 def build_url(llm_client: BaseLLMAPIClient, path: str, model: Optional[str] = None) -> str:
